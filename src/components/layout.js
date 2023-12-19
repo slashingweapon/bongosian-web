@@ -5,12 +5,17 @@ import {
     heading,
     navLinks,
     navLinkItem,
-    navLinkText
+    navLinkText,
+    warningDiv,
+    warningText,
 } from './layout.module.css'
 
 const Layout = ({ pageTitle, children }) => {
     return (
         <div className={container}>
+            <div className={warningDiv}>
+                <p className={warningText}><strong>&#9888;</strong> Under construction.</p>
+            </div>
             <nav>
                 <ul className={navLinks}>
                     <li className={navLinkItem}>

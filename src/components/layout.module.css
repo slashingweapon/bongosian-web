@@ -19,3 +19,16 @@
 .nav-link-text {
   color: black;
 }
+
+.warning-div {
+  background-color: yellow;
+  margin-left: 0;
+}
+.warning-text {
+  margin: 0;
+  padding-left: 6px;
+  padding-right: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 18pt;
+}
