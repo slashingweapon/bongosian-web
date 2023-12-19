@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "bongosian-web",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "Bongosian Press web site",
   "version": "0.1.0",
   "license": "0BSD",
   "scripts": {
@@ -14,14 +14,18 @@
   },
   "dependencies": {
     "gatsby": "^5.13.0",
+    "gatsby-plugin-image": "^3.13.0",
+    "gatsby-plugin-sharp": "^5.13.0",
+    "gatsby-source-filesystem": "^5.13.0",
+    "gatsby-transformer-sharp": "^5.13.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
+    "url": "https://github.com/slashingweapon/bongosian-web"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/slashingweapon/bongosian-web/issues"
   }
 }
