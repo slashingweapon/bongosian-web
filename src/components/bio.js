@@ -1,7 +1,12 @@
 import * as React from 'react'
 import { useStaticQuery, graphql } from "gatsby"
 import { Link } from 'gatsby'
-import { StaticImage, GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import {
+  bioFrame, 
+  bioImageFrame, 
+  bioTextFrame
+} from './bio.module.css'
 
 const Bio = ({ alt, src, children }) => {
   const images = useStaticQuery(graphql`
@@ -11,22 +16,23 @@ const Bio = ({ alt, src, children }) => {
           id
           base
           childImageSharp {
-            gatsbyImageData
+            gatsbyImageData(width: 256)
           }
         }
       }
     }
   `)
 
-/*  let oneImage = images.allFile.nodes.find(imatchit); */
   let oneImage = images.allFile.nodes.find((oneNode) => oneNode.base === {src}.src)
 
-
   return (
-    <div>
-      <p>Show image for {src} here. With alt, plus width=256</p>
-      <GatsbyImage image={oneImage.childImageSharp.gatsbyImageData} alt={alt} width="256" />
-      {children}
+    <div className={bioFrame}>
+      <div className={bioImageFrame}>
+        <GatsbyImage image={oneImage.childImageSharp.gatsbyImageData} alt={alt} />
+      </div>
+      <div className={bioTextFrame}>
+        {children}
+      </div>
     </div>
   )
 }
