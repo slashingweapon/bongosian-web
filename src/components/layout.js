@@ -10,7 +10,7 @@ import {
 
 const Layout = ({ pageTitle, children }) => {
     return (
-        <div className="container">
+        <div className={container}>
             <nav>
                 <ul className={navLinks}>
                     <li className={navLinkItem}>
@@ -26,7 +26,7 @@ const Layout = ({ pageTitle, children }) => {
                 </ul>
             </nav>
             <main>
-                <h1>{pageTitle}</h1>
+                <h1 className={heading}>{pageTitle}</h1>
                 {children}
             </main>
         </div>
