@@ -30,5 +30,16 @@ module.exports = {
         path: `${__dirname}/src/images/`,
       }
     },
+    {
+      resolve: 'gatsby-plugin-google-gtag',
+      options: {
+        trackingIds: [
+          "AW-11417146217",
+        ],
+        gtagConfig: {
+          anonymize_ip: true,
+        }
+      }
+    },
   ],
 }
