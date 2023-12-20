@@ -27,5 +27,8 @@
   },
   "bugs": {
     "url": "https://github.com/slashingweapon/bongosian-web/issues"
+  },
+  "devDependencies": {
+    "gatsby-plugin-netlify": "^5.1.1"
   }
 }
