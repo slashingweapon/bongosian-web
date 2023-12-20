@@ -7,4 +7,9 @@ exports.createPages = ({graphql, actions}) => {
     toPath: '/',
     isPermanent: false
   })
+  createRedirect({
+    fromPath: '/subscribe',
+    toPath: '/',
+    isPermanent: false
+  })
 }
