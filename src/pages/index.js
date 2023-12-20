@@ -5,7 +5,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 
 const IndexPage = () => {
   return (
-    <Layout pageTitle="Bongosian Press">
+    <Layout pageTitle="Books by CJ Holmes">
       <div style={{display: "flex"}}>
         <div>
           <StaticImage 
@@ -16,7 +16,6 @@ const IndexPage = () => {
         </div>
         <div style={{"marginLeft":"20px", "marginTop":"0px", "width":"400px"}}>
           <h2 style={{"marginTop":"0px"}}>Hungry New World</h2>
-          <h3>The newest volume from CJ Holmes.</h3>
           <p>A former tech worker thought he had made peace with the zombie apocalypse,
             until a horde destroyed his solitary life and sent him on a quest to kill
             them all. His journey will remind him there are still things left to
