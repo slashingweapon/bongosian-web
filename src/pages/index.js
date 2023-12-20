@@ -2,6 +2,7 @@ import * as React from "react"
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 import { StaticImage } from 'gatsby-plugin-image'
+import { OutboundLink } from "gatsby-plugin-google-gtag"
 
 const IndexPage = () => {
   return (
@@ -22,7 +23,9 @@ const IndexPage = () => {
             live for, and he still has plenty to lose.
           </p>
           <p>Read for free 
-            on <a href="https://www.royalroad.com/fiction/76242/hungry-new-world">Royal Road</a> until January 2024.
+            on <OutboundLink href="https://www.royalroad.com/fiction/76242/hungry-new-world">
+              Royal Road
+            </OutboundLink> until January 2024.
           </p>
         </div>
       </div>
@@ -67,11 +70,11 @@ const IndexPage = () => {
           change, to prevent the world's forgotten history from repeating. Everyone's lives 
           depends on it.
         </p>
-        <p>Read at <a href="https://www.amazon.com/dp/B0BSPB38P8"
-          alt="Tenobre books at Amazon">Amazon</a> or anywhere e-books and paperbacks are
+        <p>Read at <OutboundLink href="https://www.amazon.com/dp/B0BSPB38P8"
+          alt="Tenobre books at Amazon">Amazon</OutboundLink> or anywhere e-books and paperbacks are
           sold.
         </p>
-        <p><em>Volume four is scheduled for Spring 2024.</em></p>
+        <p><em>Volume four is scheduled for release in Winter 2024.</em></p>
 
       </div>
 
