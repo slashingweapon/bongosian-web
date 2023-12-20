@@ -18,9 +18,9 @@ const IndexPage = () => {
           <h2 style={{"marginTop":"0px"}}>Hungry New World</h2>
           <h3>The newest volume from CJ Holmes.</h3>
           <p>A former tech worker thought he had made peace with the zombie apocalypse,
-            until a horde destroys his solitary life and sends him on a quest to destroy
+            until a horde destroyed his solitary life and sent him on a quest to kill
             them all. His journey will remind him there are still things left to
-            live for, and still plenty to lose.
+            live for, and he still has plenty to lose.
           </p>
           <p>Read for free 
             on <a href="https://www.royalroad.com/fiction/76242/hungry-new-world">Royal Road</a> until January 2024.
