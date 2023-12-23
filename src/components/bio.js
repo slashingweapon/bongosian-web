@@ -25,11 +25,11 @@ const Bio = ({ alt, src, children }) => {
   let oneImage = images.allFile.nodes.find((oneNode) => oneNode.base === {src}.src)
 
   return (
-    <div className={bioFrame}>
-      <div className={bioImageFrame}>
+    <div class="row">
+      <div class="col-1">
         <GatsbyImage image={oneImage.childImageSharp.gatsbyImageData} alt={alt} />
       </div>
-      <div className={bioTextFrame}>
+      <div class="col-3">
         {children}
       </div>
     </div>

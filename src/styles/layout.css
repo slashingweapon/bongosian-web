@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+  font-family: "muli", sans-serif;
+}
+
+.container {
+  max-width: 1024px;
+  margin: auto;
+}
+
+.row:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+[class*="col-"] {
+  width: 100%;
+  float: left;
+  padding: 15pt;
+}
+
+@media only screen and (min-width: 768px) {
+  .col-1 { width: 25%; float: left; }
+  .col-2 { width: 50%; float: left; }
+  .col-3 { width: 75%; float: left; }
+  .col-4 { width: 100%; float: left; }
+}
+
+.banner {
+  width: 100%;
+  background-color:blue;
+}
+
+.banner p {
+  font-family: "biorhythm", serif;
+  font-size: 28pt;
+  text-transform: lowercase;
+  color: white;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: center;
+  margin: 0;
+}
+
+h1, h2, h3 {
+  font-family: "muli", sans-serif;
+}
+
+.sitenav {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+  padding-top: .5rem;
+  margin-top: 0;
+}
+.sitenav-item {
+  padding-right: 1.5rem;
+  font-family: "muli", serif;
+}
+.sitenav-link {
+  color: black;
+}
+.sitenav-link a:visited {
+  color: black;
+}
