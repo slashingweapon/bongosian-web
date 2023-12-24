@@ -3,30 +3,34 @@ import { Link } from 'gatsby'
 import {
     container,
     heading,
-    navLinks,
-    navLinkItem,
-    navLinkText,
 } from './layout.module.css'
+import '../styles/layout.css'
 
 const Layout = ({ pageTitle, children }) => {
     return (
-        <div className={container}>
-            <nav>
-                <ul className={navLinks}>
-                    <li className={navLinkItem}>
-                        <Link to="/" className={navLinkText}>
-                            Home
-                        </Link>
-                    </li>
-                    <li className={navLinkItem}>
-                        <Link to="/about" className={navLinkText}>
-                            About Us
-                        </Link>
-                    </li>
-                </ul>
-            </nav>
+        <div class="container">
+            <div class="col-4 banner"><p>Bongosian Press</p></div>
+            <div class="col-4">
+                <nav>
+                    <ul class="sitenav">
+                        <li class="sitenav-item">
+                            <Link to="/" class="sitenav-link">
+                                Home
+                            </Link>
+                        </li>
+                        <li class="sitenav-item">
+                            <Link to="/about" class="sitenav-link">
+                                About Us
+                            </Link>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
             <main>
-                <h1 className={heading}>{pageTitle}</h1>
+                <div class="col-4">
+                    <h1>{pageTitle}</h1>
+                </div>
                 {children}
             </main>
         </div>
