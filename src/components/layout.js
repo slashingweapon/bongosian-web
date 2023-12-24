@@ -28,7 +28,9 @@ const Layout = ({ pageTitle, children }) => {
 
             </div>
             <main>
-                <h1 class="col-4">{pageTitle}</h1>
+                <div class="col-4">
+                    <h1>{pageTitle}</h1>
+                </div>
                 {children}
             </main>
         </div>

@@ -3,6 +3,10 @@
   font-family: "muli", sans-serif;
 }
 
+html {
+  font-size: 12pt;
+}
+
 .container {
   max-width: 1024px;
   margin: auto;
@@ -17,10 +21,13 @@
 [class*="col-"] {
   width: 100%;
   float: left;
-  padding: 15pt;
+  padding: 8pt;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 600px) {
+  html {
+    font-size: 16pt;
+  }
   .col-1 { width: 25%; float: left; }
   .col-2 { width: 50%; float: left; }
   .col-3 { width: 75%; float: left; }
@@ -34,7 +41,7 @@
 
 .banner p {
   font-family: "biorhythm", serif;
-  font-size: 28pt;
+  font-size: 4ex;
   text-transform: lowercase;
   color: white;
   padding-top: .5rem;
@@ -47,6 +54,7 @@
 
 h1, h2, h3 {
   font-family: "muli", sans-serif;
+  margin: 0;
 }
 
 .sitenav {
@@ -54,7 +62,7 @@ h1, h2, h3 {
   list-style: none;
   padding-left: 0;
   padding-top: .5rem;
-  margin-top: 0;
+  margin: 0;
 }
 .sitenav-item {
   padding-right: 1.5rem;

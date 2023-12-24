@@ -58,7 +58,7 @@ const IndexPage = () => {
           />
         </div>
         <div class="col-2">
-          <p><strong>Taylor DeLanion is used to being summoned to other worlds.</strong></p>
+          <p style={{margin: 0}}><strong>Taylor DeLanion is used to being summoned to other worlds.</strong></p>
           <p>Tenobre is his eleventh, a backward civilization stuck in the bronze age. As 
             Taylor reluctantly makes a life for himself in this new world, the oddities begin 
             to add up. There is only one language, one religion, one system of magic 
