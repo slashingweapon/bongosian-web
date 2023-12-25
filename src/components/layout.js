@@ -24,7 +24,7 @@ const Layout = ({ pageTitle, children }) => {
                             </Link>
                         </li>
                         <li class="sitenav-item">
-                            <Link to="/newsletter" class="sitenav-link">
+                            <Link to="/news" class="sitenav-link">
                                 News
                             </Link>
                         </li>                        

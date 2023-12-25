@@ -1,18 +1,17 @@
 import * as React from "react"
 import Layout from '../components/layout'
 import Seo from '../components/seo'
-import NewsletterForm from "../components/subscribe"
+import SubscribeForm from "../components/subscribe"
 
-const NewsletterPage = () => {
+const NewsPage = () => {
 
   return (
     <Layout pageTitle="Subscribe">
       <p>Join our mailing list for events, announcements, and Twitch schedules. 
         This is a very low-volume list, usually just one email per month.</p>
       <row>
-        <div class="col-1"/>
-        <div class="col-3">
-          <NewsletterForm/>
+        <div class="col-4">
+          <SubscribeForm/>
         </div>
       </row>
     </Layout>
@@ -21,4 +20,4 @@ const NewsletterPage = () => {
 
 export const Head = () => <Seo title="Announcements" />
 
-export default NewsletterPage;
+export default NewsPage;

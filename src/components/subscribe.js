@@ -1,7 +1,7 @@
 import * as React from "react"
 import { navigate } from "gatsby"
 
-const NewsletterForm = () => {
+const SubscribeForm = () => {
   const handleSubmit = ({event}) => {
     event.preventDefault();
 
@@ -13,7 +13,7 @@ const NewsletterForm = () => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData).toString(),
     })
-      .then(() => navigate("/news-thanks/"))
+      .then(() => navigate("/sub-thanks/"))
       .catch((error) => alert(error));
   };
 
@@ -26,7 +26,7 @@ const NewsletterForm = () => {
       onSubmit={handleSubmit}
     >
       <input type="hidden" name="form-name" value="newsletter"/>
-      <input type="text" name="email" placeholder="your email address"/>
+      <input type="text" name="email" size="40" placeholder="your email address"/>
       <select name="action">
         <option value="add">subscribe</option>
         <option value="remove">unsubscribe</option>
@@ -37,4 +37,4 @@ const NewsletterForm = () => {
 
 }
 
-export default NewsletterForm
+export default SubscribeForm
