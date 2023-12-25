@@ -18,7 +18,7 @@ const NewsletterForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} method="post" name="newsletter" netlify>
+    <form name="newsletter" netlify>
         <input type="text" name="email" placeholder="your email address"/>
         <select name="action">
           <option value="add">subscribe</option>
