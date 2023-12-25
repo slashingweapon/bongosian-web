@@ -18,7 +18,8 @@ const NewsletterForm = () => {
   };
 
   return (
-    <form name="newsletter" netlify>
+    <form name="newsletter" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={handleSubmit}>
+        <input type="hidden" name="form-name" value="newsletter"/>
         <input type="text" name="email" placeholder="your email address"/>
         <select name="action">
           <option value="add">subscribe</option>
