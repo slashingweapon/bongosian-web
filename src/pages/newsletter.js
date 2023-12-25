@@ -11,7 +11,7 @@ const NewsletterPage = () => {
         This is a very low-volume list, usually just one email per month.</p>
       <row>
         <div class="col-1"/>
-        <div class="col-2">
+        <div class="col-3">
           <NewsletterForm/>
         </div>
       </row>
