@@ -23,6 +23,11 @@ const Layout = ({ pageTitle, children }) => {
                                 About Us
                             </Link>
                         </li>
+                        <li class="sitenav-item">
+                            <Link to="/news" class="sitenav-link">
+                                News
+                            </Link>
+                        </li>                        
                     </ul>
                 </nav>
 
