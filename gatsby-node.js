@@ -4,7 +4,7 @@ exports.createPages = ({graphql, actions}) => {
 
   createRedirect({
     fromPath: '/hungry',
-    toPath: '/',
+    toPath: '/books/hungry-new-world/',
     isPermanent: false
   })
   createRedirect({
