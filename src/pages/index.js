@@ -11,9 +11,9 @@ const IndexPage = () => {
         <div class="row">
           <div class="col-1">
             <StaticImage 
-              src="../books/hungry-new-world/hungry-new-world-cover.png" 
+              src="../books/hungry-new-world/hungry-new-world-square.png" 
               alt="Hungry New World Cover"
-              width={192}
+              width={250}
             />
           </div>
           <div class="col-3">
@@ -42,19 +42,19 @@ const IndexPage = () => {
       <div class="row">
         <div class="col-2">
           <StaticImage
-            src="../books/iv-outlander/iv-outlander-cover.png"
+            src="../books/iv-outlander/iv-outlander-square.jpg"
             alt="Taylor emerges from the summoning room."
-            width={128}
+            width={250}
           />
           <StaticImage
-            src="../books/iv-mendicant/iv-mendicant-cover.jpg"
+            src="../books/iv-mendicant/iv-mendicant-square.jpg"
             alt="Taylor fights for his life against monsters."
-            width={128}
+            width={250}
           />
           <StaticImage
-            src="../books/iv-heretic/iv-heretic-cover.png"
+            src="../books/iv-heretic/iv-heretic-square.png"
             alt="Princess: friend or foe?"
-            width={128}
+            width={250}
           />
         </div>
         <div class="col-2">
