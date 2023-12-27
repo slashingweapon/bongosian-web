@@ -9,14 +9,14 @@ const IndexPage = () => {
     <Layout pageTitle="Books by CJ Holmes">
       
         <div class="row">
-          <div class="col-1">
+          <div class="col-2">
             <StaticImage 
               src="../books/hungry-new-world/hungry-new-world-square.png" 
               alt="Hungry New World Cover"
-              width={250}
+              width={600}
             />
           </div>
-          <div class="col-3">
+          <div class="col-2">
             <h2>Hungry New World</h2>
             <p>A former tech worker thought he had made peace with the zombie apocalypse,
               until a horde destroyed his solitary life and sent him on a quest to kill
