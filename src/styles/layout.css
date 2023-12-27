@@ -82,3 +82,10 @@ input, select, button {
   margin-right: 1em;
 }
 
+.bookdata th {
+  text-align: left;
+}
+
+.bookdata td {
+  padding-left: 1em;
+}

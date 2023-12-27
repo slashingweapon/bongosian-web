@@ -1,11 +1,6 @@
 import * as React from 'react'
 import { useStaticQuery, graphql } from "gatsby"
 import { GatsbyImage } from 'gatsby-plugin-image'
-import {
-  bioFrame, 
-  bioImageFrame, 
-  bioTextFrame
-} from './bio.module.css'
 
 const Bio = ({ alt, src, children }) => {
   const images = useStaticQuery(graphql`
