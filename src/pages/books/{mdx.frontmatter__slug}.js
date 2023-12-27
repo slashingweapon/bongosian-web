@@ -1,16 +1,23 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
+import { getImage, GatsbyImage } from 'gatsby-plugin-image'
 import Layout from '../../components/layout'
 import Seo from '../../components/seo'
 
 const BookPage = ({data, children}) => {
+
   return (
     <Layout pageTitle={data.mdx.frontmatter.title}>
       <div class="row">
         <div class="col-2">
-
+          <GatsbyImage 
+            image={data.mdx.frontmatter.cover.childImageSharp.gatsbyImageData}
+            alt='Cover for ${data.mdx.frontmatter.cover}'
+          />
         </div>
-        <div class="col-2">
+      </div>
+      <div class="row">
+        <div class="col-4">
           {children}
         </div>
       </div>
@@ -25,7 +32,16 @@ query ($id: String) {
       author
       releaseDate(formatString: "MMM DD, YYYY")
       slug
-      square
+      cover {
+        childImageSharp {
+          gatsbyImageData
+        }
+      }
+      square {
+        childImageSharp {
+          gatsbyImageData
+        }
+      }
       subtitle
       title
       isbns { ebook paperback }
