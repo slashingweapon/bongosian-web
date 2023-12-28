@@ -89,3 +89,22 @@ input, select, button {
 .bookdata td {
   padding-left: 1em;
 }
+
+.accordion-handle {
+  font-family: "biorhythm", serif;
+  background-color: blue;
+  color: white;
+  padding-top: .3em;
+  padding-bottom: .3em;
+  padding-left: .3em;
+}
+.accordion-handle:before {
+  content: '\25be    ';
+}
+.accordion-handle.closed:before {
+  content: '\25b8    ';
+}
+
+.accordion-body.closed {
+  display: none;
+}

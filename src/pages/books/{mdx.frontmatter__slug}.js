@@ -9,6 +9,13 @@ import Markdown from 'react-markdown'
 
 const BookPage = ({data, children}) => {
   const meta = data.mdx.frontmatter
+
+  const doAccordion = (event) => {
+    console.log(event);
+    event.target.classList.toggle("closed");
+    event.target.nextElementSibling.classList.toggle("closed");
+  }
+
   return (
     <Layout pageTitle={meta.title}>
       <div class="row">
@@ -24,7 +31,6 @@ const BookPage = ({data, children}) => {
                 <OutboundLink href={element.url} class="sitenav-link">
                   {element.name}
                 </OutboundLink>
-                { console.log(element) }
                 { element.extra && <span>({element.extra})</span> }
                 <span>&nbsp;</span>
               </>
@@ -36,39 +42,44 @@ const BookPage = ({data, children}) => {
         </div>
       </div>
       <div class="row">
-        <div class="accordion-head"><h2>Book Details</h2></div>
-        <div class="accordion-body">
-          <table class="bookdata">
-              <tr>
-                <th>Release</th>
-                <td>{meta.releaseDate}</td>
-              </tr>
-              <tr>
-                <th>Author</th>
-                <td>{meta.author}</td>
-              </tr>
-              <tr>
-                <th>Pages</th>
-                <td>{meta.pages}</td>
-              </tr>
-              { meta.isbns && meta.isbns.paperback && 
+        <div class="col-4">
+          <h2 class="accordion-handle closed" onClick={doAccordion}>Book Details</h2>
+          <div class="accordion-body closed">
+            <table class="bookdata">
                 <tr>
-                  <th>Print ISBN</th>
-                  <td>{meta.isbns.paperback}</td>
+                  <th>Release</th>
+                  <td>{meta.releaseDate}</td>
                 </tr>
-              }
-              { meta.isbns && meta.isbns.ebook !== null && 
                 <tr>
-                  <th>EBook ISBN</th>
-                  <td>{meta.isbns.ebook}</td>
+                  <th>Author</th>
+                  <td>{meta.author}</td>
                 </tr>
-              }
-          </table>
+                <tr>
+                  <th>Pages</th>
+                  <td>{meta.pages}</td>
+                </tr>
+                { meta.isbns && meta.isbns.paperback && 
+                  <tr>
+                    <th>Print ISBN</th>
+                    <td>{meta.isbns.paperback}</td>
+                  </tr>
+                }
+                { meta.isbns && meta.isbns.ebook !== null && 
+                  <tr>
+                    <th>EBook ISBN</th>
+                    <td>{meta.isbns.ebook}</td>
+                  </tr>
+                }
+            </table>
+          </div>
         </div>
       </div>
       <div class="row">
         <div class="col-4">
-          {children}
+          <h2 class="accordion-handle closed" onClick={doAccordion}>Book Excerpt</h2>
+          <div class="accordion-body closed">
+            {children}
+          </div>
         </div>
       </div>
     </Layout>
