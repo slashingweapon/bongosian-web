@@ -61,71 +61,78 @@ const BookPage = ({data, children}) => {
       </div>
 
       <div class="row">
-        <div class="col-4">
-          <h2 class="accordion-handle closed"
+        <div class="col-4 accordion-header">
+          <button class="accordion-handle closed"
             aria-expanded="false"
             aria-controls="datazone"
             onClick={doAccordion}
             id="datacontrol"
           >
               Book Details
-          </h2>
-          <div class="accordion-body closed" 
-            id="datazone" 
-            aria-labelledby="datacontrol"
-          >
-            <table class="bookdata">
-                <tr>
-                  <th>Release</th>
-                  <td>{meta.releaseDate}</td>
-                </tr>
-                <tr>
-                  <th>Author</th>
-                  <td>{meta.author}</td>
-                </tr>
-                <tr>
-                  <th>Pages</th>
-                  <td>{meta.pages}</td>
-                </tr>
-                { meta.isbns && meta.isbns.paperback && 
-                  <tr>
-                    <th>Print ISBN</th>
-                    <td>{meta.isbns.paperback}</td>
-                  </tr>
-                }
-                { meta.isbns && meta.isbns.ebook !== null && 
-                  <tr>
-                    <th>EBook ISBN</th>
-                    <td>{meta.isbns.ebook}</td>
-                  </tr>
-                }
-            </table>
-          </div>
+          </button>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-4">
-          <h2 class="accordion-handle closed"
+        <div class="col-4 accordion-body closed" 
+          id="datazone" 
+          aria-labelledby="datacontrol"
+        >
+          <table class="bookdata"><tbody>
+              <tr>
+                <th>Release</th>
+                <td>{meta.releaseDate}</td>
+              </tr>
+              <tr>
+                <th>Author</th>
+                <td>{meta.author}</td>
+              </tr>
+              <tr>
+                <th>Pages</th>
+                <td>{meta.pages}</td>
+              </tr>
+              { meta.isbns && meta.isbns.paperback && 
+                <tr>
+                  <th>Print ISBN</th>
+                  <td>{meta.isbns.paperback}</td>
+                </tr>
+              }
+              { meta.isbns && meta.isbns.ebook !== null && 
+                <tr>
+                  <th>EBook ISBN</th>
+                  <td>{meta.isbns.ebook}</td>
+                </tr>
+              }
+          </tbody></table>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-4 accordion-header">
+          <button class="accordion-handle closed"
             aria-expanded="false"
             aria-controls="excerptzone"
             onClick={doAccordion}
             id="excerptcontrol"
           >
               Excerpt
-          </h2>
-          <div class="accordion-body closed"
-            id="excerptzone"
-            aria-labelledby="excerptcontrol"
-          >
-            {children}
-            <div><p>
-              <strong>Continue reading at: </strong> 
-              <BuyButtons/>
-            </p></div>
-          </div>
+          </button>
         </div>
       </div>
+
+      <div class="row">
+        <div class="col-4 accordion-body closed"
+          id="excerptzone"
+          aria-labelledby="excerptcontrol"
+        >
+          {children}
+          <div><p>
+            <strong>Continue reading at: </strong> 
+            <BuyButtons/>
+          </p></div>
+        </div>
+      </div>
+
     </Layout>
   )
 }
