@@ -11,9 +11,34 @@ const BookPage = ({data, children}) => {
   const meta = data.mdx.frontmatter
 
   const doAccordion = (event) => {
-    console.log(event);
-    event.target.classList.toggle("closed");
-    event.target.nextElementSibling.classList.toggle("closed");
+    const myself = event.target;
+    const panel = document.getElementById(myself.getAttribute("aria-controls"));
+    if(panel) {
+      myself.classList.toggle("closed");
+      if(myself.classList.contains("closed")) {
+        panel.classList.add("closed");
+        myself.setAttribute("aria-expanded", "false");
+      } else {
+        panel.classList.remove("closed");
+        myself.setAttribute("aria-expanded", "true");
+      }
+    }
+  }
+
+  const BuyButtons = () => {
+    return (
+      <span class="buylinks">
+        { meta.available && meta.available.map(element => (
+          <>
+            <OutboundLink href={element.url}>
+              {element.name}
+            </OutboundLink>
+            { element.extra && <span class="buyextra">({element.extra})</span> }
+            <span>&nbsp;</span>
+          </>
+        ))}
+      </span>
+    )
   }
 
   return (
@@ -26,25 +51,29 @@ const BookPage = ({data, children}) => {
             width={512}
           />
           <p>
-            { data.mdx.frontmatter.available.map(element => (
-              <>
-                <OutboundLink href={element.url} class="sitenav-link">
-                  {element.name}
-                </OutboundLink>
-                { element.extra && <span>({element.extra})</span> }
-                <span>&nbsp;</span>
-              </>
-            ))}
+            <strong>Available at: </strong> 
+            <BuyButtons/>
           </p>
         </div>
         <div class="col-2">
           <Markdown>{meta.synopsis}</Markdown>
         </div>
       </div>
+
       <div class="row">
         <div class="col-4">
-          <h2 class="accordion-handle closed" onClick={doAccordion}>Book Details</h2>
-          <div class="accordion-body closed">
+          <h2 class="accordion-handle closed"
+            aria-expanded="false"
+            aria-controls="datazone"
+            onClick={doAccordion}
+            id="datacontrol"
+          >
+              Book Details
+          </h2>
+          <div class="accordion-body closed" 
+            id="datazone" 
+            aria-labelledby="datacontrol"
+          >
             <table class="bookdata">
                 <tr>
                   <th>Release</th>
@@ -74,11 +103,26 @@ const BookPage = ({data, children}) => {
           </div>
         </div>
       </div>
+
       <div class="row">
         <div class="col-4">
-          <h2 class="accordion-handle closed" onClick={doAccordion}>Book Excerpt</h2>
-          <div class="accordion-body closed">
+          <h2 class="accordion-handle closed"
+            aria-expanded="false"
+            aria-controls="excerptzone"
+            onClick={doAccordion}
+            id="excerptcontrol"
+          >
+              Excerpt
+          </h2>
+          <div class="accordion-body closed"
+            id="excerptzone"
+            aria-labelledby="excerptcontrol"
+          >
             {children}
+            <div><p>
+              <strong>Continue reading at: </strong> 
+              <BuyButtons/>
+            </p></div>
           </div>
         </div>
       </div>

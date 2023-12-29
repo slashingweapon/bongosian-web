@@ -24,6 +24,11 @@ html {
   padding: 8pt;
 }
 
+[class*="col-"] > p:first-child {
+  margin-block-start: 0;
+  margin: 0;
+}
+
 @media only screen and (min-width: 600px) {
   html {
     font-size: 16pt;
