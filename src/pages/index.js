@@ -1,4 +1,5 @@
 import * as React from "react"
+import { Link } from "gatsby"
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 import { StaticImage } from 'gatsby-plugin-image'
@@ -9,15 +10,19 @@ const IndexPage = () => {
     <Layout pageTitle="Books by CJ Holmes">
       
         <div class="row">
-          <div class="col-1">
-            <StaticImage 
-              src="../books/hungry-new-world/hungry-new-world-cover.png" 
-              alt="Hungry New World Cover"
-              width={192}
-            />
+          <div class="col-2">
+            <Link to="/books/hungry-new-world/">
+              <StaticImage 
+                  src="../books/hungry-new-world/hungry-new-world-square.png" 
+                  alt="Hungry New World Cover"
+                  width={600}
+                />
+            </Link>
           </div>
-          <div class="col-3">
-            <h2>Hungry New World</h2>
+          <div class="col-2">
+            <Link to="/books/hungry-new-world/">
+              <h2>Hungry New World</h2>
+            </Link>
             <p>A former tech worker thought he had made peace with the zombie apocalypse,
               until a horde destroyed his solitary life and sent him on a quest to kill
               them all. His journey will remind him there are still things left to
@@ -41,21 +46,27 @@ const IndexPage = () => {
       </div>
       <div class="row">
         <div class="col-2">
-          <StaticImage
-            src="../books/iv-outlander/iv-outlander-cover.png"
-            alt="Taylor emerges from the summoning room."
-            width={128}
-          />
-          <StaticImage
-            src="../books/iv-mendicant/iv-mendicant-cover.jpg"
-            alt="Taylor fights for his life against monsters."
-            width={128}
-          />
-          <StaticImage
-            src="../books/iv-heretic/iv-heretic-cover.png"
-            alt="Princess: friend or foe?"
-            width={128}
-          />
+          <Link to="/books/iv-outlander/">
+            <StaticImage
+              src="../books/iv-outlander/iv-outlander-square.jpg"
+              alt="Taylor emerges from the summoning room."
+              width={250}
+            />
+          </Link>
+          <Link to="/books/iv-mendicant/">
+            <StaticImage
+              src="../books/iv-mendicant/iv-mendicant-square.jpg"
+              alt="Taylor fights for his life against monsters."
+              width={250}
+            />
+          </Link>
+          <Link to="/books/iv-heretic/">
+            <StaticImage
+                src="../books/iv-heretic/iv-heretic-square.png"
+                alt="Princess: friend or foe?"
+                width={250}
+              />
+          </Link>
         </div>
         <div class="col-2">
           <p style={{margin: 0}}><strong>Taylor DeLanion is used to being summoned to other worlds.</strong></p>

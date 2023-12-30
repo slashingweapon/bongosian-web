@@ -1,9 +1,5 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
-import {
-    container,
-    heading,
-} from './layout.module.css'
 import '../styles/layout.css'
 
 const Layout = ({ pageTitle, children }) => {
@@ -33,9 +29,11 @@ const Layout = ({ pageTitle, children }) => {
 
             </div>
             <main>
-                <div class="col-4">
-                    <h1>{pageTitle}</h1>
-                </div>
+                { pageTitle !== undefined &&
+                    <div class="col-4">
+                        <h1>{pageTitle}</h1>
+                    </div>
+                }
                 {children}
             </main>
         </div>

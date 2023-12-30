@@ -8,7 +8,7 @@ html {
 }
 
 .container {
-  max-width: 1024px;
+  max-width: 1045px;
   margin: auto;
 }
 
@@ -22,6 +22,11 @@ html {
   width: 100%;
   float: left;
   padding: 8pt;
+}
+
+[class*="col-"] > p:first-child {
+  margin-block-start: 0;
+  margin: 0;
 }
 
 @media only screen and (min-width: 600px) {
@@ -82,3 +87,37 @@ input, select, button {
   margin-right: 1em;
 }
 
+.bookdata th {
+  text-align: left;
+}
+
+.bookdata td {
+  padding-left: 1em;
+}
+
+.accordion-header {
+  background-color: blue;
+}
+
+.accordion-handle {
+  font-family: "biorhythm", serif;
+  font-size: 150%;
+  font-weight: bold;
+  background-color: blue;
+  color: white;
+  padding-top: .1em;
+  padding-bottom: .1em;
+  padding-left: .1em;
+  border: 0;
+  margin: 0;
+}
+.accordion-handle:before {
+  content: '\25be    ';
+}
+.accordion-handle.closed:before {
+  content: '\25b8    ';
+}
+
+.accordion-body.closed {
+  display: none;
+}
