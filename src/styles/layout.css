@@ -121,3 +121,13 @@ input, select, button {
 .accordion-body.closed {
   display: none;
 }
+
+.buylinks a, .buylinks a:visited {
+  background-color: green;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  padding-left: 2%;
+  padding-right: 2%;
+  border-radius: 8pt;
+}
