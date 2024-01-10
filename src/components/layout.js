@@ -1,12 +1,17 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
+import Container from 'react-bootstrap/container'
+import Row from 'react-bootstrap/row'
+import Col from 'react-bootstrap/col'
 import '../styles/layout.css'
 
 const Layout = ({ pageTitle, children }) => {
     return (
-        <div class="container">
-            <div class="col-4 banner"><p>Bongosian Press</p></div>
-            <div class="col-4">
+        <Container fluid="sm">
+            <Row>
+                <Col className="banner"><p>Bongosian Press</p></Col>
+            </Row>
+            <Row><Col>
                 <nav>
                     <ul class="sitenav">
                         <li class="sitenav-item">
@@ -26,17 +31,18 @@ const Layout = ({ pageTitle, children }) => {
                         </li>                        
                     </ul>
                 </nav>
-
-            </div>
+            </Col></Row>
             <main>
                 { pageTitle !== undefined &&
-                    <div class="col-4">
-                        <h1>{pageTitle}</h1>
-                    </div>
+                    <Row>
+                        <Col>
+                            <h1>{pageTitle}</h1>
+                        </Col>
+                    </Row>
                 }
                 {children}
             </main>
-        </div>
+        </Container>
     )
 }
 

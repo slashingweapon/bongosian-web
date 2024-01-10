@@ -5,25 +5,11 @@ import Layout from '../../components/layout'
 import Seo from '../../components/seo'
 import { OutboundLink } from "gatsby-plugin-google-gtag"
 import Markdown from 'react-markdown'
-
+import Row from 'react-bootstrap/row'
+import Col from 'react-bootstrap/col'
 
 const BookPage = ({data, children}) => {
   const meta = data.mdx.frontmatter
-
-  const doAccordion = (event) => {
-    const myself = event.target;
-    const panel = document.getElementById(myself.getAttribute("aria-controls"));
-    if(panel) {
-      myself.classList.toggle("closed");
-      if(myself.classList.contains("closed")) {
-        panel.classList.add("closed");
-        myself.setAttribute("aria-expanded", "false");
-      } else {
-        panel.classList.remove("closed");
-        myself.setAttribute("aria-expanded", "true");
-      }
-    }
-  }
 
   const BuyButtons = () => {
     return (
@@ -43,8 +29,8 @@ const BookPage = ({data, children}) => {
 
   return (
     <Layout pageTitle={meta.title}>
-      <div class="row">
-        <div class="col-2">
+      <Row>
+        <Col xs="12" sm="6">
           <GatsbyImage 
             image={meta.cover.childImageSharp.gatsbyImageData}
             alt={`Cover: `+ meta.coverDesc }
@@ -54,31 +40,17 @@ const BookPage = ({data, children}) => {
             <strong>Available at: </strong> 
             <BuyButtons/>
           </p>
-        </div>
-        <div class="col-2">
+        </Col>
+        <Col xs="12" sm="6">
           <Markdown>{meta.synopsis}</Markdown>
-        </div>
-      </div>
+        </Col>
+      </Row>
 
-      <div class="row">
-        <div class="col-4 accordion-header">
-          <button class="accordion-handle closed"
-            aria-expanded="false"
-            aria-controls="datazone"
-            onClick={doAccordion}
-            id="datacontrol"
-          >
-              Book Details
-          </button>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-4 accordion-body closed" 
-          id="datazone" 
-          aria-labelledby="datacontrol"
-        >
-          <table class="bookdata"><tbody>
+      <Row>
+        <Col xs="12">
+          <details>
+            <summary>Book Details</summary>
+            <table class="bookdata"><tbody>
               <tr>
                 <th>Release</th>
                 <td>{meta.releaseDate}</td>
@@ -103,35 +75,23 @@ const BookPage = ({data, children}) => {
                   <td>{meta.isbns.ebook}</td>
                 </tr>
               }
-          </tbody></table>
-        </div>
-      </div>
+            </tbody></table>
+          </details>
+        </Col>
+      </Row>
 
-      <div class="row">
-        <div class="col-4 accordion-header">
-          <button class="accordion-handle closed"
-            aria-expanded="false"
-            aria-controls="excerptzone"
-            onClick={doAccordion}
-            id="excerptcontrol"
-          >
-              Excerpt
-          </button>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-4 accordion-body closed"
-          id="excerptzone"
-          aria-labelledby="excerptcontrol"
-        >
-          {children}
-          <div><p>
-            <strong>Continue reading at: </strong> 
-            <BuyButtons/>
-          </p></div>
-        </div>
-      </div>
+      <Row>
+        <Col xs="12">
+          <details>
+            <summary>Excerpt</summary>
+              {children}
+              <div><p>
+                <strong>Continue reading at: </strong> 
+                <BuyButtons/>
+              </p></div>            
+          </details>
+        </Col>
+      </Row>
 
     </Layout>
   )

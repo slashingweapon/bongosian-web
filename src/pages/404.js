@@ -6,7 +6,7 @@ const AboutPage = () => {
 
   return (
     <Layout pageTitle="File Not Found">
-      The file you were looking for isn't here.
+      <p>The file you were looking for isn't here.</p>
     </Layout>
   )
 }

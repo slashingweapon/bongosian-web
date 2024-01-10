@@ -2,18 +2,22 @@ import * as React from "react"
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 import SubscribeForm from "../components/subscribe"
+import Row from 'react-bootstrap/row'
+import Col from 'react-bootstrap/col'
 
 const NewsPage = () => {
 
   return (
     <Layout pageTitle="Subscribe">
-      <p>Join our mailing list for events, announcements, and Twitch schedules. 
-        This is a very low-volume list, usually just one email per month.</p>
-      <row>
-        <div class="col-4">
+      <Row>
+        <Col xs="12">
+          <p>Join our mailing list for events, announcements, and Twitch schedules. 
+            This is a very low-volume list, typically one email per month.</p>
+        </Col>
+        <Col xs="12">
           <SubscribeForm/>
-        </div>
-      </row>
+        </Col>
+      </Row>
     </Layout>
   )
 }

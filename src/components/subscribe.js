@@ -24,6 +24,7 @@ const SubscribeForm = () => {
       data-netlify="true" 
       data-netlify-honeypot="bot-field" 
       onSubmit={handleSubmit}
+      class="newsForm"
     >
       <input type="hidden" name="form-name" value="newsletter"/>
       <input type="text" name="email" size="40" placeholder="your email address"/>
