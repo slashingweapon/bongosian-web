@@ -1,99 +1,83 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.com">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's hello-world starter
-</h1>
+# Bongosian.com Web Site
 
-Kick off your project with this hello-world boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+This project builds and installs the [bongosian.com](https://bongosian.com) web site.
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.com/docs/gatsby-starters/)._
+## Overview
 
-## 🚀 Quick start
+Bongosian.com is a Gatsby project, which staticly builds a React application, and ultimately depends on Node.js to manage dependencies, testing, and development runtime. The production site is hosted on Netlify, and deployed through triggers on GitHub.
 
-1.  **Create a Gatsby site.**
+### References
 
-    Use the Gatsby CLI ([install instructions](https://www.gatsbyjs.com/docs/tutorial/getting-started/part-0/#gatsby-cli)) to create a new site, specifying the hello-world starter.
+Obviously, I'm not going to explain Node, React, and Gatsby in this document.  Here are some pointers, though.
 
-    ```shell
-    # create a new Gatsby site using the hello-world starter
-    gatsby new my-hello-world-starter https://github.com/gatsbyjs/gatsby-starter-hello-world
-    ```
+* [Learn Node.js](https://nodejs.org/en/learn/getting-started/introduction-to-nodejs)
+* [Learn React](https://react.dev/learn)
+* [Learn Gatsby](https://www.gatsbyjs.com/docs/tutorial/getting-started/)
 
-1.  **Start developing.**
+## Install bongosian-web
 
-    Navigate into your new site’s directory and start it up.
+**Install Node.js** : If you don't already have it, [install Node.js](https://nodesource.com/blog/installing-nodejs-tutorial-mac-os-x/) as your first step.
 
-    ```shell
-    cd my-hello-world-starter/
-    gatsby develop
-    ```
+**Clone The Repository** : You can clone this project using `git clone git@github.com:slashingweapon/bongosian-web.git`.  
 
-1.  **Open the source code and start editing!**
+Alternatively, you can visit the [project site](https://github.com/slashingweapon/bongosian-web) and download an archive.  
 
-    Your site is now running at `http://localhost:8000`!
+The live site is on the `production` branch.
 
-    Note: You'll also see a second link: `http://localhost:8000/___graphql`. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby Tutorial](https://www.gatsbyjs.com/docs/tutorial/getting-started/part-4/#use-graphiql-to-explore-the-data-layer-and-write-graphql-queries).
+**Install Dependencies** : Open a terminal, change directory to the repo directory, and run `npm install`.  Node will download all the remaining dependencies, including React and Gatsby and all their required plugins.
 
-    Open the `my-hello-world-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+## Build (Development)
 
-## 🚀 Quick start (Netlify)
+Testing and playing with the applicaiton is easy. Change directory to the project directory and run Gatsby's development server.
 
-Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
+```
+$ cd bongosian-web
+$ gatsby develop
+```
 
-[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-hello-world)
+You will see a lot of logs about building the site. Gatsby will run a local server you can use to test the web site, available on [http://localhost:8000](http://localhost:8000) .
 
-## 🧐 What's inside?
+When you use the development server, your saved changes will be compiled and available immediately, without restarting the server.
 
-A quick look at the top-level files and directories you'll see in a typical Gatsby project.
+A GraphQL explorer is also made available on [http://localhost:8000/___graphql](http://localhost:8000/___graphql)
 
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package.json
-    └── README.md
+## Deployment
 
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+Bongosian.com is deployed through the [Bongosian Press Netlify Site](https://app.netlify.com/sites/bongosian-press/overview).
 
-1.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+The following deployments are made automatically:
+* Any commit to `production` will deploy the live site.
+* Any commit to `master` will deploy a preproduction site.
+* Any merge request for the `master` branch will create a test deployment. Any commit to the working branch will deploy a new test site.
 
-1.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
+I only have 300 minutes of free build time, so don't spam pushes to a branch with an open merge request to `master`. I typically do frequent pushes, so when I'm working on this project I'll defer making a merge request until I'm ready to deploy the test site on Netlify. That lets me keep doing frequent pushes to the issue branch without eating up my build minutes.
 
-1.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-browser/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+## Version Control & Deployment
 
-1.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/) for more detail).
+### Work Branches
 
-1.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+Branches for larger feature sets get a human-readable label ending in "-feature" (eg: `bootstrap-feature`). They are always branched from `master`.
 
-1.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-ssr/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+Branches intended for a single issue are named with the issue ID. (eg: `PR15-dev`, `PR99-fix`). They can be branched from `master` or from a feature branch.
 
-1.  **`LICENSE`**: This Gatsby starter is licensed under the 0BSD license. This means that you can see this file as a placeholder and replace it with your own license.
+The code-test-debug loop happens on the developer's local machine.
 
-1.  **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
+### Test Before You Merge
 
-1.  **`README.md`**: A text file containing useful reference information about your project.
+Even though production has its own branch, we don't want to deploy anything seriously broken onto `master`. Having Netlify do automatic test deployments from merge requests turns out to be very useful in this regard. This is where missing dependencies and incompatibilities show up.
 
-## 🎓 Learning Gatsby
+When a branch is ready to be tested on the Netlify server, create a merge request to `master`.  Netlify will create a test deployment.  Use the [Bongosian Press Builds](https://app.netlify.com/teams/slashingweapon/builds) page to find out what url to use to access the deployed site.
 
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.com/). Here are some places to start:
+Test.  Anything new you push onto the working branch will trigger a new test deployment. This is an awesome feature, but try not to overuse it.
 
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.com/docs/tutorial/getting-started/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
+If the change set is well and truly done (or whatever I decide is "done enough" to close the issue) then merge.
 
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.com/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
+Then, test the preproduction site to make sure nothing untoward happened.
 
-## 💫 Deploy
+### Deploy To Production
 
-[Build, Deploy, and Host On Netlify](https://netlify.com)
+The production site is build from the `production` branch. Whatever is committed and pushed there will end up on the live web site.
 
-The fastest way to combine your favorite tools and APIs to build the fastest sites, stores, and apps for the web. And also the best place to build, deploy, and host your Gatsby sites.
+Pushes from `master` to `production` are always a fast-forward, at least they are if I'm doing my job right. I typically just pull both branches, merge `master` onto `production`, and then push production. 
 
-<!-- AUTO-GENERATED-CONTENT:END -->
+You can do this entirely from the UI by creating a merge request, if you don't mind spinning up a superfluous test build.
