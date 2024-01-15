@@ -3,6 +3,8 @@ import { Link } from 'gatsby'
 import Container from 'react-bootstrap/container'
 import Row from 'react-bootstrap/row'
 import Col from 'react-bootstrap/col'
+import Nav from 'react-bootstrap/Nav'
+import Navbar from 'react-bootstrap/Navbar'
 import '../styles/layout.css'
 
 const Layout = ({ pageTitle, children }) => {
@@ -11,27 +13,17 @@ const Layout = ({ pageTitle, children }) => {
             <Row>
                 <Col className="banner"><p>Bongosian Press</p></Col>
             </Row>
-            <Row><Col>
-                <nav>
-                    <ul class="sitenav">
-                        <li class="sitenav-item">
-                            <Link to="/" class="sitenav-link">
-                                Home
-                            </Link>
-                        </li>
-                        <li class="sitenav-item">
-                            <Link to="/about" class="sitenav-link">
-                                About Us
-                            </Link>
-                        </li>
-                        <li class="sitenav-item">
-                            <Link to="/news" class="sitenav-link">
-                                News
-                            </Link>
-                        </li>                        
-                    </ul>
-                </nav>
-            </Col></Row>
+            <Row>
+                <Navbar expand="lg">
+                    <Navbar.Collapse>
+                        <Nav>
+                            <Nav.Link href="/">Home</Nav.Link>
+                            <Nav.Link href="/about">About Us</Nav.Link>
+                            <Nav.Link href="/news">News</Nav.Link>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Navbar>
+            </Row>
             <main>
                 { pageTitle !== undefined &&
                     <Row>
