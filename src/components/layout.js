@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
 import Container from 'react-bootstrap/container'
 import Row from 'react-bootstrap/row'
 import Col from 'react-bootstrap/col'
@@ -14,14 +13,12 @@ const Layout = ({ pageTitle, children }) => {
                 <Col className="banner"><p>Bongosian Press</p></Col>
             </Row>
             <Row>
-                <Navbar expand="lg">
-                    <Navbar.Collapse>
-                        <Nav>
-                            <Nav.Link href="/">Home</Nav.Link>
-                            <Nav.Link href="/about">About Us</Nav.Link>
-                            <Nav.Link href="/news">News</Nav.Link>
-                        </Nav>
-                    </Navbar.Collapse>
+                <Navbar>
+                    <Nav>
+                        <Nav.Link href="/">Home</Nav.Link>
+                        <Nav.Link href="/about">About Us</Nav.Link>
+                        <Nav.Link href="/news">News</Nav.Link>
+                    </Nav>
                 </Navbar>
             </Row>
             <main>

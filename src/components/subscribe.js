@@ -1,5 +1,9 @@
 import * as React from "react"
 import { navigate } from "gatsby"
+import Col from 'react-bootstrap/Col'
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
 
 const SubscribeForm = () => {
   const handleSubmit = ({event}) => {
@@ -18,22 +22,34 @@ const SubscribeForm = () => {
   };
 
   return (
-    <form 
-      name="newsletter" 
-      method="post" 
-      data-netlify="true" 
-      data-netlify-honeypot="bot-field" 
+    <Form name="newsletter"
+      method="post"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
-      class="newsForm"
-    >
-      <input type="hidden" name="form-name" value="newsletter"/>
-      <input type="text" name="email" size="40" placeholder="your email address"/>
-      <select name="action">
-        <option value="add">subscribe</option>
-        <option value="remove">unsubscribe</option>
-      </select>
-      <button type="submit">Send</button>
-    </form>
+      className="newsForm">
+
+      <Col>
+        <FloatingLabel controlId="newsEmail" label="your email address" className="newsControl">
+          <Form.Control type="email"/>
+        </FloatingLabel>
+      </Col>
+
+      <Col>
+        <Form.Group controlId="newsAction" className="newsControl">
+          <Form.Select>
+            <option value="add">subscribe</option>
+            <option value="remove">unsubscribe</option>
+          </Form.Select>
+        </Form.Group>
+      </Col>
+      
+      <Col>
+        <Button variant="primary" type="submit">Send</Button>
+      </Col>
+        
+    </Form>
+      
   )
 
 }

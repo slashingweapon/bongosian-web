@@ -12,11 +12,12 @@ const NewsPage = () => {
       <Row>
         <Col xs="12">
           <p>Join our mailing list for events, announcements, and my Twitch schedule. 
-            This is a very low-volume list, typically one email per month.</p>
+            This is a very low-volume list, typically one email per month. We never 
+            share your email address with anyone.</p>
         </Col>
-        <Col xs="12">
-          <SubscribeForm/>
-        </Col>
+      </Row>
+      <Row>
+        <SubscribeForm/>
       </Row>
     </Layout>
   )

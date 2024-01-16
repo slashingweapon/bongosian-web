@@ -13,15 +13,15 @@ const BookPage = ({data, children}) => {
 
   const BuyButtons = () => {
     return (
-      <span class="buylinks">
+      <span className="buylinks">
         { meta.available && meta.available.map(element => (
-          <>
-            <OutboundLink href={element.url} className="buylink">
+          <span key={element.name}>
+            <OutboundLink key={element.name} href={element.url} className="buylink">
               {element.name}
             </OutboundLink>
-            { element.extra && <span class="buyextra"> ({element.extra})</span> }
+            { element.extra && <span className="buyextra"> ({element.extra})</span> }
             <span>&nbsp;</span>
-          </>
+          </span>
         ))}
       </span>
     )
@@ -51,7 +51,7 @@ const BookPage = ({data, children}) => {
         <Col xs="12">
           <details>
             <summary>Book Details</summary>
-            <table class="bookdata"><tbody>
+            <table className="bookdata"><tbody>
               <tr>
                 <th>Release</th>
                 <td>{meta.releaseDate}</td>

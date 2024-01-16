@@ -37,3 +37,11 @@ summary {
 .bookDetailCover {
   margin-bottom: 8pt;
 }
+
+.newsControl {
+  margin-bottom: 8pt;
+}
+
+.newsControl input, .newsControl select {
+  border-color: darkgray;
+} 
