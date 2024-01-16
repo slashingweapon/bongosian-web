@@ -5,8 +5,8 @@ import Layout from '../../components/layout'
 import Seo from '../../components/seo'
 import { OutboundLink } from "gatsby-plugin-google-gtag"
 import Markdown from 'react-markdown'
-import Row from 'react-bootstrap/row'
-import Col from 'react-bootstrap/col'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 const BookPage = ({data, children}) => {
   const meta = data.mdx.frontmatter
