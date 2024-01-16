@@ -2,8 +2,8 @@ import * as React from "react"
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 import SubscribeForm from "../components/subscribe"
-import Row from 'react-bootstrap/row'
-import Col from 'react-bootstrap/col'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 const NewsPage = () => {
 

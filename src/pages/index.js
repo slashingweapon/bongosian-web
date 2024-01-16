@@ -4,8 +4,8 @@ import Layout from '../components/layout'
 import Seo from '../components/seo'
 import { StaticImage } from 'gatsby-plugin-image'
 import { OutboundLink } from "gatsby-plugin-google-gtag"
-import Row from 'react-bootstrap/row'
-import Col from 'react-bootstrap/col'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 const IndexPage = () => {
   return (
