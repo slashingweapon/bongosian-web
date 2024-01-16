@@ -16,10 +16,10 @@ const BookPage = ({data, children}) => {
       <span class="buylinks">
         { meta.available && meta.available.map(element => (
           <>
-            <OutboundLink href={element.url}>
+            <OutboundLink href={element.url} className="buylink">
               {element.name}
             </OutboundLink>
-            { element.extra && <span class="buyextra">({element.extra})</span> }
+            { element.extra && <span class="buyextra"> ({element.extra})</span> }
             <span>&nbsp;</span>
           </>
         ))}
@@ -35,6 +35,7 @@ const BookPage = ({data, children}) => {
             image={meta.cover.childImageSharp.gatsbyImageData}
             alt={`Cover: `+ meta.coverDesc }
             width={512}
+            className="bookDetailCover"
           />
           <p>
             <strong>Available at: </strong> 

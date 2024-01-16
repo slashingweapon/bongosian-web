@@ -11,7 +11,7 @@ const NewsPage = () => {
     <Layout pageTitle="Subscribe">
       <Row>
         <Col xs="12">
-          <p>Join our mailing list for events, announcements, and Twitch schedules. 
+          <p>Join our mailing list for events, announcements, and my Twitch schedule. 
             This is a very low-volume list, typically one email per month.</p>
         </Col>
         <Col xs="12">

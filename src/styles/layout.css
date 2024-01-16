@@ -1,10 +1,39 @@
+* {
+  font-family: 'muli','sans-serif';
+  font-size: 16pt;
+}
+
 .banner {
   background-color: blue;
 }
 
 .banner p {
+
+  font-family: biorhythm,serif;
+  text-transform: lowercase; 
   color: white;
   font-size: 32pt;
   text-align: center;
-  padding: 6pt;
+  padding: 0;
+  margin: 0;
+}
+
+summary {
+  background-color: blue;
+  font-family: 'biorhythm','serif';
+  font-size: 18pt;
+  color: white;
+  padding-left: 6pt;
+  margin-bottom: 6pt;
+}
+
+.buylink {
+  border-radius:8pt;
+  color: white;
+  padding: 4pt 6pt 4pt 6pt;
+  background-color: green;
+}
+
+.bookDetailCover {
+  margin-bottom: 8pt;
 }
