@@ -6,7 +6,8 @@ import Form from 'react-bootstrap/Form';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 
 const SubscribeForm = () => {
-  const handleSubmit = ({event}) => {
+  const handleSubmit = (event) => {
+    console.log(event);
     event.preventDefault();
 
     const myForm = event.target;
