@@ -7,14 +7,11 @@ import FloatingLabel from 'react-bootstrap/FloatingLabel';
 
 const SubscribeForm = () => {
   const handleSubmit = (event) => {
-    console.log(event);
     event.preventDefault();
 
     const myForm = event.target;
     const formData = new FormData(myForm);
-    console.log(formData);
     const encodedForm = new URLSearchParams(formData).toString();
-    console.log(encodedForm);
 
     fetch("/", {
       method: "POST",
