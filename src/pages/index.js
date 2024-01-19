@@ -4,13 +4,15 @@ import Layout from '../components/layout'
 import Seo from '../components/seo'
 import { StaticImage } from 'gatsby-plugin-image'
 import { OutboundLink } from "gatsby-plugin-google-gtag"
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 const IndexPage = () => {
   return (
     <Layout pageTitle="Books by CJ Holmes">
       
-        <div class="row">
-          <div class="col-2">
+        <Row>
+          <Col xs="12" sm="5">
             <Link to="/books/hungry-new-world/">
               <StaticImage 
                   src="../books/hungry-new-world/hungry-new-world-square.png" 
@@ -18,8 +20,8 @@ const IndexPage = () => {
                   width={600}
                 />
             </Link>
-          </div>
-          <div class="col-2">
+          </Col>
+          <Col xs="12" sm="7">
             <Link to="/books/hungry-new-world/">
               <h2>Hungry New World</h2>
             </Link>
@@ -33,19 +35,19 @@ const IndexPage = () => {
                 Royal Road
               </OutboundLink> until January 2024.
             </p>
-          </div>
-        </div>
+          </Col>
+        </Row>
 
       <hr/>
 
-      <div class="row">
-        <div class="col-4">
+      <Row>
+        <Col>
           <h2>The Tenobre Cycle</h2>
           <h3>An Otherworld Adventure Series</h3>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-2">
+        </Col>
+      </Row>
+      <Row>
+        <Col xs="12" sm="5">
           <Link to="/books/iv-outlander/">
             <StaticImage
               src="../books/iv-outlander/iv-outlander-square.jpg"
@@ -67,8 +69,8 @@ const IndexPage = () => {
                 width={250}
               />
           </Link>
-        </div>
-        <div class="col-2">
+        </Col>
+        <Col xs="12" sm="7">
           <p style={{margin: 0}}><strong>Taylor DeLanion is used to being summoned to other worlds.</strong></p>
           <p>Tenobre is his eleventh, a backward civilization stuck in the bronze age. As 
             Taylor reluctantly makes a life for himself in this new world, the oddities begin 
@@ -86,8 +88,8 @@ const IndexPage = () => {
           </p>
           <p><em>Volume four is scheduled for release in Winter 2024.</em></p>
 
-        </div>
-      </div>
+        </Col>
+      </Row>
 
     </Layout>
   )

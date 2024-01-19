@@ -1,42 +1,37 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import Nav from 'react-bootstrap/Nav'
+import Navbar from 'react-bootstrap/Navbar'
 import '../styles/layout.css'
 
 const Layout = ({ pageTitle, children }) => {
     return (
-        <div class="container">
-            <div class="col-4 banner"><p>Bongosian Press</p></div>
-            <div class="col-4">
-                <nav>
-                    <ul class="sitenav">
-                        <li class="sitenav-item">
-                            <Link to="/" class="sitenav-link">
-                                Home
-                            </Link>
-                        </li>
-                        <li class="sitenav-item">
-                            <Link to="/about" class="sitenav-link">
-                                About Us
-                            </Link>
-                        </li>
-                        <li class="sitenav-item">
-                            <Link to="/news" class="sitenav-link">
-                                News
-                            </Link>
-                        </li>                        
-                    </ul>
-                </nav>
-
-            </div>
+        <Container fluid="sm">
+            <Row>
+                <Col className="banner"><p>Bongosian Press</p></Col>
+            </Row>
+            <Row>
+                <Navbar>
+                    <Nav>
+                        <Nav.Link href="/">Home</Nav.Link>
+                        <Nav.Link href="/about">About Us</Nav.Link>
+                        <Nav.Link href="/news">News</Nav.Link>
+                    </Nav>
+                </Navbar>
+            </Row>
             <main>
                 { pageTitle !== undefined &&
-                    <div class="col-4">
-                        <h1>{pageTitle}</h1>
-                    </div>
+                    <Row>
+                        <Col>
+                            <h1>{pageTitle}</h1>
+                        </Col>
+                    </Row>
                 }
                 {children}
             </main>
-        </div>
+        </Container>
     )
 }
 

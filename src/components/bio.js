@@ -1,6 +1,8 @@
 import * as React from 'react'
 import { useStaticQuery, graphql } from "gatsby"
 import { GatsbyImage } from 'gatsby-plugin-image'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 const Bio = ({ alt, src, children }) => {
   const images = useStaticQuery(graphql`
@@ -20,14 +22,14 @@ const Bio = ({ alt, src, children }) => {
   let oneImage = images.allFile.nodes.find((oneNode) => oneNode.base === {src}.src)
 
   return (
-    <div class="row">
-      <div class="col-1">
+    <Row>
+      <Col xs="12" sm="3">
         <GatsbyImage image={oneImage.childImageSharp.gatsbyImageData} alt={alt} />
-      </div>
-      <div class="col-3">
+      </Col>
+      <Col xs="12" sm="7">
         {children}
-      </div>
-    </div>
+      </Col>
+    </Row>
   )
 }
 
