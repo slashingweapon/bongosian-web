@@ -33,6 +33,8 @@ const SubscribeForm = () => {
       onSubmit={handleSubmit}
       className="newsForm">
 
+      <input type="hidden" name="form-name" value="newsletter"/>
+      
       <Col>
         <FloatingLabel controlId="newsEmail" label="your email address" className="newsControl">
           <Form.Control name="email" type="email"/>
