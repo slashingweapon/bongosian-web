@@ -12,11 +12,14 @@ const SubscribeForm = () => {
 
     const myForm = event.target;
     const formData = new FormData(myForm);
+    console.log(formData);
+    const encodedForm = new URLSearchParams(formData).toString();
+    console.log(encodedForm);
 
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString(),
+      body: encodedForm,
     })
       .then(() => navigate("/sub-thanks/"))
       .catch((error) => alert(error));
@@ -32,13 +35,13 @@ const SubscribeForm = () => {
 
       <Col>
         <FloatingLabel controlId="newsEmail" label="your email address" className="newsControl">
-          <Form.Control type="email"/>
+          <Form.Control name="email" type="email"/>
         </FloatingLabel>
       </Col>
 
       <Col>
         <Form.Group controlId="newsAction" className="newsControl">
-          <Form.Select>
+          <Form.Select name="action">
             <option value="add">subscribe</option>
             <option value="remove">unsubscribe</option>
           </Form.Select>
