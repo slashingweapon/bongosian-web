@@ -1,18 +1,19 @@
-import * as React from "react"
-import { Link } from "gatsby"
-import Layout from '../components/layout'
-import Seo from '../components/seo'
-import { StaticImage } from 'gatsby-plugin-image'
-import { OutboundLink } from "gatsby-plugin-google-gtag"
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
+import * as React from "react";
+import { Link } from "gatsby";
+import Layout from '../components/layout';
+import Seo from '../components/seo';
+import { StaticImage } from 'gatsby-plugin-image';
+import { OutboundLink } from "gatsby-plugin-google-gtag";
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Carousel from 'react-bootstrap/Carousel';
 
 const IndexPage = () => {
   return (
     <Layout pageTitle="Books by CJ Holmes">
       
         <Row>
-          <Col xs="12" sm="5">
+          <Col xs="12" md="5">
             <Link to="/books/hungry-new-world/">
               <StaticImage 
                   src="../books/hungry-new-world/hungry-new-world-square.png" 
@@ -21,7 +22,7 @@ const IndexPage = () => {
                 />
             </Link>
           </Col>
-          <Col xs="12" sm="7">
+          <Col xs="12" md="7">
             <Link to="/books/hungry-new-world/">
               <h2>Hungry New World</h2>
             </Link>
@@ -43,51 +44,53 @@ const IndexPage = () => {
       <Row>
         <Col>
           <h2>The Tenobre Cycle</h2>
-          <h3>An Otherworld Adventure Series</h3>
+          <p style={{margin: 0}}><strong>Taylor DeLanion is used to being summoned to other worlds.</strong></p>
+
+          <p>As Taylor makes a life for himself in Tenobre and explores the world's secrets,
+            he realizes human civilization is threatened. Taylor must abandon his usual 
+            restraint and force a cultural change, or else the world's forgotten history will repeat.
+          </p>
         </Col>
       </Row>
+
+      <Carousel indicator={false} pause='hover'>
+        <Carousel.Item>
+          <Row>
+            <Col xs="12" md="5">
+              <Link to="/books/iv-outlander/">
+                  <StaticImage
+                    src="../books/iv-outlander/iv-outlander-square.jpg"
+                    alt="Taylor emerges from the summoning room."
+                  />
+              </Link>
+            </Col>
+            <Col xs="12" md="7">
+              <p>Some text about Outlander here.</p>
+            </Col>
+          </Row>
+        </Carousel.Item>
+        <Carousel.Item>
+          <Row>
+            <Col xs="12" md="5">
+              <StaticImage
+                src="../books/iv-mendicant/iv-mendicant-square.jpg"
+                alt="Taylor fights for his life against monsters."
+                />
+            </Col>
+            <Col xs="12" md="7">
+              <p>Some text about Mendicant here.</p>
+            </Col>
+          </Row>
+        </Carousel.Item>
+      </Carousel>
+
       <Row>
-        <Col xs="12" sm="5">
-          <Link to="/books/iv-outlander/">
-            <StaticImage
-              src="../books/iv-outlander/iv-outlander-square.jpg"
-              alt="Taylor emerges from the summoning room."
-              width={250}
-            />
-          </Link>
-          <Link to="/books/iv-mendicant/">
-            <StaticImage
-              src="../books/iv-mendicant/iv-mendicant-square.jpg"
-              alt="Taylor fights for his life against monsters."
-              width={250}
-            />
-          </Link>
-          <Link to="/books/iv-heretic/">
-            <StaticImage
-                src="../books/iv-heretic/iv-heretic-square.png"
-                alt="Princess: friend or foe?"
-                width={250}
-              />
-          </Link>
-        </Col>
-        <Col xs="12" sm="7">
-          <p style={{margin: 0}}><strong>Taylor DeLanion is used to being summoned to other worlds.</strong></p>
-          <p>Tenobre is his eleventh, a backward civilization stuck in the bronze age. As 
-            Taylor reluctantly makes a life for himself in this new world, the oddities begin 
-            to add up. There is only one language, one religion, one system of magic 
-            controlled by the church, and very little history.
-          </p>
-          <p>The world is changing, yet nobody seems to notice. As Taylor discovers more of the 
-            world's secrets he has to abandon his usual restraint and force civilization to 
-            change, to prevent the world's forgotten history from repeating. Everyone's lives 
-            depends on it.
-          </p>
-          <p>Read at <OutboundLink href="https://www.amazon.com/dp/B0BSPB38P8"
+        <Col>
+          <p><em>Volume four will be published in Spring 2024.</em></p>
+          <p>Read The Tenobre Cycle at <OutboundLink href="https://www.amazon.com/dp/B0BSPB38P8"
             alt="Tenobre books at Amazon">Amazon</OutboundLink> or anywhere e-books and paperbacks are
             sold.
           </p>
-          <p><em>Volume four is scheduled for release in Winter 2024.</em></p>
-
         </Col>
       </Row>
 
