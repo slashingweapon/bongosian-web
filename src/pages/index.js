@@ -1,5 +1,6 @@
 import * as React from "react";
-import { Link } from "gatsby";
+import { Link, useStaticQuery, graphql } from "gatsby";
+import { GatsbyImage } from 'gatsby-plugin-image'
 import Layout from '../components/layout';
 import Seo from '../components/seo';
 import { StaticImage } from 'gatsby-plugin-image';
@@ -9,6 +10,36 @@ import Col from 'react-bootstrap/Col';
 import Carousel from 'react-bootstrap/Carousel';
 
 const IndexPage = () => {
+  const tenobreBooks = useStaticQuery(graphql`
+    query {
+      allMdx(
+        filter: {frontmatter: {series: {eq: "tenobre"}}}
+        sort: {frontmatter: {seriesOrder: ASC}}
+      ) {
+        nodes {
+          id
+          frontmatter {
+            title
+            seriesOrder
+            logline
+            slug
+            available {
+              extra
+              name
+              url
+            }
+            coverDesc
+            square {
+              childrenImageSharp {
+                gatsbyImageData
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+
   return (
     <Layout pageTitle="Books by CJ Holmes">
       
@@ -31,10 +62,10 @@ const IndexPage = () => {
               them all. His journey will remind him there are still things left to
               live for, and he still has plenty to lose.
             </p>
-            <p>Read for free 
-              on <OutboundLink href="https://www.royalroad.com/fiction/76242/hungry-new-world">
+            <p>Read free 
+              on <OutboundLink href="https://www.royalroad.com/fiction/76242/hungry-new-world" className="buylink">
                 Royal Road
-              </OutboundLink> until January 2024.
+              </OutboundLink> through January 2024.
             </p>
           </Col>
         </Row>
@@ -53,35 +84,36 @@ const IndexPage = () => {
         </Col>
       </Row>
 
-      <Carousel indicator={false} pause='hover'>
-        <Carousel.Item>
-          <Row>
-            <Col xs="12" md="5">
-              <Link to="/books/iv-outlander/">
-                  <StaticImage
-                    src="../books/iv-outlander/iv-outlander-square.jpg"
-                    alt="Taylor emerges from the summoning room."
-                  />
-              </Link>
-            </Col>
-            <Col xs="12" md="7">
-              <p>Some text about Outlander here.</p>
-            </Col>
-          </Row>
-        </Carousel.Item>
-        <Carousel.Item>
-          <Row>
-            <Col xs="12" md="5">
-              <StaticImage
-                src="../books/iv-mendicant/iv-mendicant-square.jpg"
-                alt="Taylor fights for his life against monsters."
-                />
-            </Col>
-            <Col xs="12" md="7">
-              <p>Some text about Mendicant here.</p>
-            </Col>
-          </Row>
-        </Carousel.Item>
+      <Carousel indicators={false} pause='hover'>
+        {tenobreBooks.allMdx.nodes.map(book => (
+            <Carousel.Item key={book.id}>
+              <Row>
+                <Col xs="12" md="5">
+                  <Link to={"/books/".concat(book.frontmatter.slug,"/")}>
+                    <GatsbyImage image={book.frontmatter.square.childrenImageSharp[0].gatsbyImageData} 
+                      alt={book.frontmatter.coverDesc} />
+                  </Link>
+                </Col>
+                <Col xs="12" md="5">
+                  <Link to={"/books/".concat(book.frontmatter.slug,"/")} className="bookTitleLink">
+                    <h2>{book.frontmatter.title}</h2>
+                  </Link>
+                  <p>{book.frontmatter.logline}</p>
+                  <p className="buylinks">
+                    {book.frontmatter.available.map(link => (
+                      <span key={book.frontmatter.slug.concat("_link_", link.name)}>
+                        <OutboundLink href={link.url} className="buylink">
+                          {link.name}
+                        </OutboundLink>
+                        &nbsp;
+                      </span>
+                    ))}
+                  </p>
+                </Col>
+              </Row>
+            </Carousel.Item>
+          ))
+        }
       </Carousel>
 
       <Row>
