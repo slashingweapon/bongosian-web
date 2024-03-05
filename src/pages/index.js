@@ -57,15 +57,15 @@ const IndexPage = () => {
             <Link to="/books/hungry-new-world/">
               <h2>Hungry New World</h2>
             </Link>
-            <p>A former tech worker thought he had made peace with the zombie apocalypse,
-              until a horde destroyed his solitary life and sent him on a quest to kill
+            <p>A former tech worker thinks he's made peace with the zombie apocalypse,
+              until a horde destroys his solitary life and sends him on a quest to kill
               them all. His journey will remind him there are still things left to
               live for, and he still has plenty to lose.
             </p>
             <p>Read free 
               on <OutboundLink href="https://www.royalroad.com/fiction/76242/hungry-new-world" className="buylink">
                 Royal Road
-              </OutboundLink> through January 2024.
+              </OutboundLink> until March 20, 2024.
             </p>
           </Col>
         </Row>
