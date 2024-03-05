@@ -83,7 +83,7 @@ const BookPage = ({data, children}) => {
 
       <Row>
         <Col xs="12">
-          <details>
+          <details open>
             <summary>Excerpt</summary>
               {children}
               <div><p>
