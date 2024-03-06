@@ -62,10 +62,12 @@ const IndexPage = () => {
               them all. His journey will remind him there are still things left to
               live for, and he still has plenty to lose.
             </p>
-            <p>Read free 
-              on <OutboundLink href="https://www.royalroad.com/fiction/76242/hungry-new-world" className="buylink">
-                Royal Road
-              </OutboundLink> until March 20, 2024.
+
+            <p><strong>Release date:</strong> March 20, 2024 in paperback and ebook!</p>
+
+            <p>Pre-order now from <OutboundLink href="https://www.amazon.com/dp/B0CWZRHG7G" className="buylink">
+                Amazon
+              </OutboundLink>.
             </p>
           </Col>
         </Row>
