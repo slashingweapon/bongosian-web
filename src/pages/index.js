@@ -63,9 +63,7 @@ const IndexPage = () => {
               live for, and he still has plenty to lose.
             </p>
 
-            <p><strong>Release date:</strong> March 20, 2024 in paperback and ebook!</p>
-
-            <p>Pre-order now from <OutboundLink href="https://www.amazon.com/dp/B0CWZRHG7G" className="buylink">
+            <p>Order now from <OutboundLink href="https://www.amazon.com/dp/B0CWZRHG7G" className="buylink">
                 Amazon
               </OutboundLink>.
             </p>
