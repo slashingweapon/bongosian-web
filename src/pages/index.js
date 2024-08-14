@@ -118,8 +118,10 @@ const IndexPage = () => {
 
       <Row>
         <Col>
-          <p><em>Volume four will be published in Spring 2024.</em></p>
-          <p>Read The Tenobre Cycle at <OutboundLink href="https://www.amazon.com/dp/B0BSPB38P8"
+          <p><em>Read <em>Exile</em> for free
+          on <OutboundLink href="https://www.royalroad.com/fiction/90077/isekai-veteran-exile">Royal Road</OutboundLink>
+          </em></p>
+          <p>Read the full Tenobre Cycle at <OutboundLink href="https://www.amazon.com/dp/B0BSPB38P8"
             alt="Tenobre books at Amazon">Amazon</OutboundLink> or anywhere e-books and paperbacks are
             sold.
           </p>

@@ -50,7 +50,7 @@ The following deployments are made automatically:
 * Any commit to `master` will deploy a preproduction site.
 * Any merge request for the `master` branch will create a test deployment. Any commit to the working branch will deploy a new test site.
 
-I only have 300 minutes of free build time, so don't spam pushes to a branch with an open merge request to `master`. I typically do frequent pushes, so when I'm working on this project I'll defer making a merge request until I'm ready to deploy the test site on Netlify. That lets me keep doing frequent pushes to the issue branch without eating up my build minutes.
+I only have 300 minutes of free build time, so don't spam pushes to a branch with an open merge request to `master`. I typically do frequent pushes, so when I'm working on this project I'll defer making a merge request until I'm ready to deploy the test site on Netlify. That lets me do frequent pushes to the issue branch without eating up my build minutes.
 
 ## Version Control & Deployment
 
@@ -62,7 +62,7 @@ Branches intended for a single issue are named with the issue ID. (eg: `PR15-dev
 
 The code-test-debug loop happens on the developer's local machine.
 
-### Test Before You Merge
+### Test Before Merging
 
 Even though production has its own branch, we don't want to deploy anything seriously broken onto `master`. Having Netlify do automatic test deployments from merge requests turns out to be very useful in this regard. This is where missing dependencies and incompatibilities show up.
 
@@ -76,7 +76,7 @@ Then, test the preproduction site to make sure nothing untoward happened.
 
 ### Deploy To Production
 
-The production site is build from the `production` branch. Whatever is committed and pushed there will end up on the live web site.
+The production site is built from the `production` branch. Whatever is committed and pushed there will end up on the live web site.
 
 Pushes from `master` to `production` are always a fast-forward, at least they are if I'm doing my job right. I typically just pull both branches, merge `master` onto `production`, and then push production. 
 
