@@ -17,6 +17,7 @@ const Layout = ({ pageTitle, children }) => {
                     <Nav>
                         <Nav.Link href="/">Home</Nav.Link>
                         <Nav.Link href="/about">About Us</Nav.Link>
+                        <Nav.Link href="/glossary">Glossary</Nav.Link>
                         <Nav.Link href="/news">News</Nav.Link>
                     </Nav>
                 </Navbar>

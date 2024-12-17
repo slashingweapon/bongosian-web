@@ -49,3 +49,7 @@ summary {
   width: 5%;
   background-color: lightslategray;
 }
+
+.gTerm {
+  text-transform: capitalize;
+}
