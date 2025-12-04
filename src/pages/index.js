@@ -45,25 +45,22 @@ const IndexPage = () => {
       
         <Row>
           <Col xs="12" md="5">
-            <Link to="/books/hungry-new-world/">
+            <Link to="/books/nadl-cursed/">
               <StaticImage 
-                  src="../books/hungry-new-world/hungry-new-world-square.png" 
-                  alt="Hungry New World Cover"
+                  src="../books/nadl-cursed/nadl-cursed-square.jpg" 
+                  alt="A Cursed Child cover"
                   width={600}
                 />
             </Link>
           </Col>
           <Col xs="12" md="7">
-            <Link to="/books/hungry-new-world/">
-              <h2>Hungry New World</h2>
+            <Link to="/books/nadl-cursed/">
+              <h2>I Swear I'm Not A Dark Lord!: A Cursed Child</h2>
             </Link>
-            <p>A former tech worker thinks he's made peace with the zombie apocalypse,
-              until a horde destroys his solitary life and sends him on a quest to kill
-              them all. His journey will remind him there are still things left to
-              live for, and he still has plenty to lose.
+            <p>Renowned in his last life, Taylor hopes his reincarnation will allow him more peace and quiet. But things are never that simple.
             </p>
 
-            <p>Order now from <OutboundLink href="https://www.amazon.com/dp/B0CWZRHG7G" className="buylink">
+            <p>Order now from <OutboundLink href="https://www.amazon.com/dp/B0FHF9QQVC" className="buylink">
                 Amazon
               </OutboundLink>.
             </p>
@@ -127,6 +124,35 @@ const IndexPage = () => {
           </p>
         </Col>
       </Row>
+
+	  <hr/>
+	  
+        <Row>
+          <Col xs="12" md="5">
+            <Link to="/books/hungry-new-world/">
+              <StaticImage 
+                  src="../books/hungry-new-world/hungry-new-world-square.png" 
+                  alt="Hungry New World Cover"
+                  width={600}
+                />
+            </Link>
+          </Col>
+          <Col xs="12" md="7">
+            <Link to="/books/hungry-new-world/">
+              <h2>Hungry New World</h2>
+            </Link>
+            <p>A former tech worker thinks he's made peace with the zombie apocalypse,
+              until a horde destroys his solitary life and sends him on a quest to kill
+              them all. His journey will remind him there are still things left to
+              live for, and he still has plenty to lose.
+            </p>
+
+            <p>Order now from <OutboundLink href="https://www.amazon.com/dp/B0CWZRHG7G" className="buylink">
+                Amazon
+              </OutboundLink>.
+            </p>
+          </Col>
+        </Row>
 
     </Layout>
   )
